@@ -197,7 +197,7 @@ class ImageManager(FileManager):
             :param image: The image object
             :param size: size is PIL tuple (width, height, force) ex: (200,100,True)
         """
-        (width, height, force) = size
+        width, height, force = size
 
         if image.size[0] > width or image.size[1] > height:
             if force:
@@ -224,7 +224,7 @@ class ImageManager(FileManager):
 
 
 def uuid_namegen(file_data):
-    return str(uuid.uuid1()) + "_sep_" + file_data.filename
+    return str(uuid.uuid4()) + "_sep_" + file_data.filename
 
 
 def get_file_original_name(name):
